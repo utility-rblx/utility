@@ -46,8 +46,8 @@ end
 
 function Utility:GetFile(service: string, sub_service: string? ): ModuleScript
   local file: ModuleScript = (sub_service and true) and
-    Services:FindFirstChild(service) or 
-    Sub_Services:FindFirstChild(service):FindFirstChild(sub_service)
+    Sub_Services:FindFirstChild(service):FindFirstChild(sub_service) or
+    Services:FindFirstChild(service)  
 
   assert(
     file,
