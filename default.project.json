@@ -5,7 +5,17 @@
 
     "ReplicatedStorage": {
       "$className": "ReplicatedStorage",
-      "$path": "src"
+      "$path": "src/Modules"
+    },
+
+    "ServerScriptService": {
+      "$className": "ServerScriptService",
+      "$path": "src/Server"
+    },
+
+    "StarterGui": {
+      "$className": "StarterGui",
+      "$path": "src/Client"
     }
   }
 }

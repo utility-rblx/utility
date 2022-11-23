@@ -7,6 +7,7 @@ local Data = require( UtilityFolder:WaitForChild('Data') )
 
 local Services = UtilityFolder:WaitForChild('Services')
 local Sub_Services = UtilityFolder:WaitForChild('Sub-Services')
+local Deprecated = UtilityFolder:WaitForChild('Deprecated')
 
 -- Types
 export type ValidateData = {
@@ -68,6 +69,14 @@ function Utility:GetService( service: string, sub_service: string? ): { any }
   Utility:Validate(servicedata.validateinfo) -- Will error if fails
 
   return servicedata
+end
+
+function Utility:GetDeprecatedService( service: string ): { any }
+  local deprecatedFile =  Deprecated:FindFirstAncestor(service)
+
+  assert( deprecatedFile, ('Could not find %s'):format(service) )
+
+  return deprecatedFile
 end
 
 function Utility:GetServiceWithoutValidate( service: string, sub_service: string? ): { any }
