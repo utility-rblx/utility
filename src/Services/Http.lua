@@ -15,4 +15,9 @@ local Http = {
 }
 Http.__index = Http
 
+-- Methods
+function Http.Methods:GenerateGUID(wrapped: boolean?): string
+	
+end
+
 return Http
